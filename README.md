@@ -1,4 +1,7 @@
 # sima-rest-api
+Лейаут проекта взят с http://github.com/golang-standards/project-layout  
+Архитектура проекта взята с http://github.com/bxcodec/go-clean-arch
+
 DATABASE: 
 - ~~Модель пользователей~~
 - ~~Модель права~~ 
