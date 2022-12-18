@@ -20,7 +20,12 @@ OPTIONAL:
 3. ~~Автотестирование (пакет testing - из коробки) routes backend желательно~~
 
 <pre>
-TODO:
+PROBLEM:
 1. GET возвращает юзера с паролем
 2. Вместо даты в ответе объект time.Date
+</pre>
+
+<pre>
+TODO:
+1. Валидация
 </pre>
