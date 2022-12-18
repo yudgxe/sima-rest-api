@@ -31,4 +31,5 @@ PROBLEM:
 <pre>
 TODO:
 1. Валидация
+2. Кеш
 </pre>
