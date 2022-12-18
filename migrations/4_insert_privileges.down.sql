@@ -1,0 +1,1 @@
+DELETE FROM privileges WHERE user_id = 1;

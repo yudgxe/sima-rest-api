@@ -1,0 +1,1 @@
+INSERT INTO privileges(user_id, permission) VALUES (1, 'admin');

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  sima-app:
+    build: ./
+    command: ./wait-for-postgres.sh db bash -c "mig init && mig up && app"
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - DB_PASSWORD=123
+
+  db:
+    image: postgres:latest
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgres/data
+    environment:
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=db_api
+
+    ports:
+      - 5436:5432
