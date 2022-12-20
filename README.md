@@ -4,7 +4,7 @@
 
 Несколько готовых тестов + примеры запросов https://www.postman.com/aviation-specialist-64455861/workspace/sima-api-test/overview 
 
-***Блок PROBLEM сделан уже после дедлайна***
+***!!!Блок PROBLEM сделан уже после дедлайна!!!*** 
 
 
 DATABASE: 
