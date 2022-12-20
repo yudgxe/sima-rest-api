@@ -39,6 +39,8 @@ func (us *User) handleGet() echo.HandlerFunc {
 			return ctx.JSON(http.StatusInternalServerError, newErrorResponce("error", err.Error()))
 		}
 
+		user.Sanitize()
+
 		return ctx.JSON(http.StatusOK, newSuccessResponce("success", user))
 	}
 }

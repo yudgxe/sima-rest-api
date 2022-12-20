@@ -7,6 +7,10 @@ type User struct {
 	Name      string    `json:"name"`
 	Surname   string    `json:"surname"`
 	Login     string    `json:"login"`
-	Password  string    `json:"password"`
+	Password  string    `json:"password,omitempty"`
 	Birthdate time.Time `json:"birthdate"`
+}
+
+func (u *User) Sanitize() {
+	u.Password = ""
 }
