@@ -7,7 +7,8 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/yudgxe/sima-rest-api/internal/delivery/rest/handler"
 	"github.com/yudgxe/sima-rest-api/internal/service/basic"
-	"github.com/yudgxe/sima-rest-api/internal/store/teststore"
+	"github.com/yudgxe/sima-rest-api/internal/store/psql"
+	"github.com/yudgxe/sima-rest-api/pkg/database"
 
 	_ "github.com/lib/pq"
 )
@@ -20,21 +21,19 @@ var (
 func Start(c *Config) {
 	e := echo.New()
 
-	/*
-		db, err := database.NewPostgres(database.PostgresConnInfo{
-			Host:     c.DB.Host,
-			Port:     c.DB.Port,
-			User:     c.DB.User,
-			Password: c.DB.Password,
-			Name:     c.DB.Name,
-			SSLMode:  database.ModeDisable,
-		})
-		if err != nil {
-			e.Logger.Fatal(err)
-		}
-	*/
+	db, err := database.NewPostgres(database.PostgresConnInfo{
+		Host:     c.DB.Host,
+		Port:     c.DB.Port,
+		User:     c.DB.User,
+		Password: c.DB.Password,
+		Name:     c.DB.Name,
+		SSLMode:  database.ModeDisable,
+	})
+	if err != nil {
+		e.Logger.Fatal(err)
+	}
 
-	store := teststore.New()
+	store := psql.New(db)
 
 	handler.NewHandler(&handler.Deps{
 		UserService: basic.NewUserService(store),
