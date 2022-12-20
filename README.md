@@ -1,6 +1,8 @@
 # sima-rest-api
 Лейаут проекта взят с http://github.com/golang-standards/project-layout  
-Архитектура проекта взята с http://github.com/bxcodec/go-clean-arch
+Архитектура проекта взята с http://github.com/bxcodec/go-clean-arch  
+
+Несколько готовых тестов + примеры запросов https://www.postman.com/aviation-specialist-64455861/workspace/sima-api-test/overview  
 
 DATABASE: 
 - ~~Модель пользователей~~
