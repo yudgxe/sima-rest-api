@@ -1,0 +1,35 @@
+# sima-rest-api
+Лейаут проекта взят с http://github.com/golang-standards/project-layout  
+Архитектура проекта взята с http://github.com/bxcodec/go-clean-arch
+
+DATABASE: 
+- ~~Модель пользователей~~
+- ~~Модель права~~ 
+- ~~Миграции через (go-pg/migrations) (Пакет для миграций)~~  
+
+
+BACKEND:
+- ~~Авторизации по логину и паролю~~
+- ~~CRUD (CREATE, READ, UPDATE, DELETE) на таблицу пользователей~~
+- ~~Логирование~~
+- ~~Доступ только после авторизации~~
+- - ~~Полный CRUD для администраторов~~
+- - ~~Только чтение для пользователей~~
+- ~~Общение посредствам REST API~~    
+
+OPTIONAL:
+1. Cформированая документация swagger и доступ по url backend
+2. ~~Использование Docker, docker-compose, Makefile~~ 
+3. ~~Автотестирование (пакет testing - из коробки) routes backend желательно~~
+
+<pre>
+PROBLEM:
+1. GET возвращает юзера с паролем
+2. Вместо даты в ответе объект time.Date
+</pre>
+
+<pre>
+TODO:
+1. Валидация
+2. Кеш
+</pre>
