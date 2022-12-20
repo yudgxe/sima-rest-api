@@ -91,7 +91,7 @@ func (us *User) handleCreateWithPermission() echo.HandlerFunc {
 			return ctx.JSON(http.StatusBadRequest, newErrorResponce("error", err.Error()))
 		}
 
-		date, err := time.Parse("01/02/2006", req.Birthdate)
+		date, err := parseDate(req.Birthdate)
 		if err != nil {
 			return ctx.JSON(http.StatusBadRequest, newErrorResponce("error", err.Error()))
 		}
@@ -123,7 +123,7 @@ func bindAndParseUser(ctx echo.Context) (*model.User, error) {
 		return nil, err
 	}
 
-	date, err := time.Parse("01/02/2006", req.Birthdate)
+	date, err := parseDate(req.Birthdate)
 	if err != nil {
 		return nil, err
 	}
@@ -137,4 +137,12 @@ func bindAndParseUser(ctx echo.Context) (*model.User, error) {
 	}
 
 	return u, nil
+}
+
+func parseDate(date string) (time.Time, error) {
+	if date == "" {
+		return time.Time{}, nil
+	}
+
+	return time.Parse("01/02/2006", date)
 }
